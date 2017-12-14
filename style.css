@@ -1,13 +1,13 @@
 /*!
-Theme Name: _s
-Theme URI: https://underscores.me/
-Author: Automattic
-Author URI: https://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Theme Name: Portfolio
+Theme URI: https://mel.codes/
+Author: Melissa Wong
+Author URI: https://mel.codes/
+Description: This is a custom theme based off of the Underscores starter theme.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: _s
+Text Domain: portfolio
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -41,6 +41,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+
+@font-face {
+	font-family: 'handwriting';
+	src: url('//2ttf.com/webfont/8ynz7SbSwC0/webfont.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'HandwritingLight';
+	src: url('//2ttf.com/webfont/12riBpwApCS/webfont.ttf') format('truetype');
+}
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -255,9 +266,17 @@ th {
 	padding: 0;
 }
 
+/* WP FORMS */
+.wpforms-field-label {
+	font-family: 'Roboto', sans-serif;
+}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+
+
+
 body,
 button,
 input,
@@ -266,17 +285,22 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 1.1rem;
 	line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: 'HandwritingLight', monospace;
 	clear: both;
+}
+
+h2, h4 {
+	font-family: 'Roboto', sans-serif;
 }
 
 p {
 	margin-bottom: 1.5em;
+    font-family: 'Roboto', sans-serif;
 }
 
 dfn, cite, em, i {
@@ -350,11 +374,12 @@ hr {
 }
 
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em 0;
+	padding-left: 0;
 }
 
 ul {
-	list-style: disc;
+	list-style-type: none;
 }
 
 ol {
@@ -391,6 +416,7 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
 
 /*--------------------------------------------------------------
 # Forms
@@ -474,24 +500,66 @@ select {
 
 textarea {
 	width: 100%;
+	max-width: 564px;
+}
+
+.wpforms-field {
+	margin: auto;
 }
 
 /*--------------------------------------------------------------
-# Navigation
+# Header, Footer & Navigation
 --------------------------------------------------------------*/
+
+header#masthead, footer {
+	max-width: 1400px;
+	display: flex;
+}
+
+header#masthead {
+	justify-content: space-between;
+	margin: 30px auto;
+	width: 95%;
+}
+
+header img#logo { 
+	width: auto;
+	height: 125px;
+}
+
+#site-navigation li a {
+	margin-left: 30%;
+}
+
+footer.site-footer {
+	flex-direction: column;
+	align-items: center;
+	background: url(assets/seattle-skyline.svg) no-repeat bottom fixed;
+    background-size: contain;
+    background-clip: border-box;
+    clear: both;
+}
+
+footer .site-info {
+	margin-bottom: 80px;
+}
+
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #009999; /* light blue */
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
 }
 
 a:visited {
-	color: purple;
+	color: #009999; /* light blue */
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	opacity: .7;
 }
 
 a:focus {
@@ -502,14 +570,40 @@ a:hover, a:active {
 	outline: 0;
 }
 
+a.button, a.more-link {
+	padding: 10px 30px;
+	background-color: #009999;
+	opacity: .65;
+	font-size: 1.2em;
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 20px;
+	border: 1px solid #009999;
+	color: #fff;
+	font-family: 'Inconsolata', monospace;
+	min-width: 200px;
+}
+
+a.button:hover, a.button:focus, a.button:active,
+a.more-link:hover, a.more-link:focus, a.more-link:active {
+	background: #fff;
+	color: #000;
+	border-color: #009999;
+	opacity: 1;
+}
+
+a.button:focus, a.more-link:focus {
+	backround: #ff6633;
+}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	display: flex;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.3em;
 }
 
 .main-navigation ul {
@@ -555,6 +649,17 @@ a:hover, a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	color: #000;
+}
+
+.main-navigation a:visited {
+	color: #000;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus, 
+.main-navigation a:active {
+	color: #009999; /* dark green */ 
 }
 
 /* Small menu. */
@@ -675,7 +780,7 @@ a:hover, a:active {
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-	content: "";
+	/*content: ""; */
 	display: table;
 	table-layout: fixed;
 }
@@ -701,9 +806,91 @@ a:hover, a:active {
 	max-width: 100%;
 }
 
+.widget-title {
+	margin-bottom: 5px;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+body {
+
+}
+
+.site-content {
+	display: flex;
+	justify-content: space-around;
+}
+
+.content-area, .widget-area {
+	padding: 0 3%;
+}
+
+#blog-header {
+	display: block;
+	margin: auto;
+}
+
+article {
+	max-width: 940px;
+}
+
+#wpforms-262 {
+	width: 100%;
+}
+
+.entry-title {
+	font-size: 4em;
+	text-align: center;
+	margin: 0;
+	line-height: 1;
+}
+
+.entry-title > a {
+	font-family: 'HandwritingLight', curisve;
+}
+
+.entry-content {
+}
+
+#resume-section, #resume-docs {
+	display: flex;
+	justify-content: center;
+}
+
+#resume-section {
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+}
+
+#resume-docs {
+}
+
+#resume-docs > a {
+	margin: 0 10px;
+}
+
+
+.entry-header .entry-meta {
+	text-align: center;
+	border-bottom: 1px dashed #ccc;
+	margin: 20px 0;
+	padding-bottom: 10px
+}
+
+.entry-footer {
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px dashed #ccc;
+	font-size: .9em;
+}
+
+.entry-footer span {
+	margin: 0 10px;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -712,7 +899,7 @@ a:hover, a:active {
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 auto 1.5em;
 }
 
 .updated:not(.published) {
