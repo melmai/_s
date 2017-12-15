@@ -18,7 +18,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,700" rel="stylesheet"> 
 
 	<?php wp_head(); ?>
 </head>

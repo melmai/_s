@@ -267,16 +267,20 @@ th {
 }
 
 /* WP FORMS */
+
+.wpforms-field-medium {
+	width: 100%;
+
+}
+
 .wpforms-field-label {
-	font-family: 'Roboto', sans-serif;
+	margin: auto;
+	align-self: flex-start;
 }
 
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-
-
-
 body,
 button,
 input,
@@ -284,23 +288,35 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
-	font-size: 1.1rem;
-	line-height: 1.5;
+	font-family: 'Roboto', Arial, sans-serif;
+	font-size: 20px;
+}
+
+@media screen and (max-width: 37.5em) {
+	body,
+	button,
+	input,
+	select,
+	optgroup,
+	textarea {
+		font-size: 16px;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'HandwritingLight', monospace;
 	clear: both;
 }
 
-h2, h4 {
-	font-family: 'Roboto', sans-serif;
+h2, h3, h4, h5, h6 {
+	margin: 1.5em 0 .75em;
+}
+h2, h4, h6 {
+	weight: 700;
 }
 
 p {
-	margin-bottom: 1.5em;
-    font-family: 'Roboto', sans-serif;
+	line-height: 1.6;
+	margin-top: 0;
 }
 
 dfn, cite, em, i {
@@ -308,7 +324,14 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 3em;
+	position: relative;
+}
+
+@media screen and (max-width: 37.5em) {
+	blockquote {
+		margin: 20px;
+	}
 }
 
 address {
@@ -374,16 +397,21 @@ hr {
 }
 
 ul, ol {
-	margin: 0 0 1.5em 0;
+	margin: 0 0 1.5em 2em;
 	padding-left: 0;
 }
 
 ul {
-	list-style-type: none;
+	list-style-type: disc;
 }
 
 ol {
 	list-style: decimal;
+}
+
+ul > li,
+ol > li {
+	margin-bottom: 5px;
 }
 
 li > ul,
@@ -426,21 +454,22 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+	border-color: #009999;
+	background: #009999;
+	color: #fff;
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
 	padding: .6em 1em .4em;
+	font-family: 'Inconsolata', Arial, sans-serif;
+	text-transform: uppercase;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	opacity: .8;
 }
 
 button:active, button:focus,
@@ -450,7 +479,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+	background: #00E5E5;
 }
 
 input[type="text"],
@@ -469,10 +498,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	color: #ccc;
+	border: 1px solid #009999;
 	padding: 3px;
+	font-family: 'Inconsolata', monospace;
 }
 
 input[type="text"]:focus,
@@ -524,7 +553,7 @@ header#masthead {
 
 header img#logo { 
 	width: auto;
-	height: 125px;
+	height: 100px;
 }
 
 #site-navigation li a {
@@ -541,7 +570,7 @@ footer.site-footer {
 }
 
 footer .site-info {
-	margin-bottom: 80px;
+	margin-bottom: 100px;
 }
 
 
@@ -551,7 +580,7 @@ footer .site-info {
 a {
 	color: #009999; /* light blue */
 	text-decoration: none;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Inconsolata', monospace;
 }
 
 a:visited {
@@ -574,7 +603,6 @@ a.button, a.more-link {
 	padding: 10px 30px;
 	background-color: #009999;
 	opacity: .65;
-	font-size: 1.2em;
 	display: inline-block;
 	text-align: center;
 	margin-bottom: 20px;
@@ -593,7 +621,8 @@ a.more-link:hover, a.more-link:focus, a.more-link:active {
 }
 
 a.button:focus, a.more-link:focus {
-	backround: #ff6633;
+	background: #00E5E5;
+	border-color: #00E5E5;
 }
 
 /*--------------------------------------------------------------
@@ -602,7 +631,6 @@ a.button:focus, a.more-link:focus {
 .main-navigation {
 	clear: both;
 	display: flex;
-	font-family: 'Roboto', sans-serif;
 	font-size: 1.3em;
 }
 
@@ -650,6 +678,7 @@ a.button:focus, a.more-link:focus {
 	display: block;
 	text-decoration: none;
 	color: #000;
+	font-family: 'Inconsolata', monospace;
 }
 
 .main-navigation a:visited {
@@ -680,7 +709,7 @@ a.button:focus, a.more-link:focus {
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 auto 1.5em;
 	overflow: hidden;
 }
 
@@ -810,15 +839,35 @@ a.button:focus, a.more-link:focus {
 	margin-bottom: 5px;
 }
 
+.search-form {
+	display: flex;
+}
+
+aside#secondary > section > ul {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+#recent-posts-2 > ul > li { /* spacing between post titles in recent posts */
+	line-height: 1.2;
+	margin-bottom: 10px;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 
-body {
-
+blockquote > p {
+	font-size: 1.5em;
+	font-family: 'HandwritingLight', sans-serif;
+	line-height: 1.2;
+	border: 2px dotted #ccc;
+	border-left: 0;
+	border-right: 0;
+	padding: 5%;
 }
 
-.site-content {
+#blog-container {
 	display: flex;
 	justify-content: space-around;
 }
@@ -836,23 +885,22 @@ article {
 	max-width: 940px;
 }
 
-#wpforms-262 {
-	width: 100%;
-}
-
-.entry-title {
-	font-size: 4em;
+h1.entry-title {
+	font-size: 3em;
 	text-align: center;
 	margin: 0;
 	line-height: 1;
+	font-weight: 200;
 }
 
 .entry-title > a {
-	font-family: 'HandwritingLight', curisve;
+	font-family: 'Roboto', Arial, sans-serif;
+	color: #006666;
+	font-weight: 200;
+	font-size: 1.3em;
 }
 
-.entry-content {
-}
+/* ============= RESUME PAGE ============= */
 
 #resume-section, #resume-docs {
 	display: flex;
@@ -872,23 +920,80 @@ article {
 	margin: 0 10px;
 }
 
+#resume-section a img {
+	box-shadow: 1px 1px 10px #ccc;
+	margin-top: 30px;
+	margin-right: 0;
+}
+
 
 .entry-header .entry-meta {
 	text-align: center;
-	border-bottom: 1px dashed #ccc;
+	border-bottom: 2px dashed #ccc;
 	margin: 20px 0;
 	padding-bottom: 10px
 }
 
-.entry-footer {
+.entry-meta > span {
+	font-family: 'Inconsolata', monospace;
+	font-size: .9em;
+	color: #666;
+}
+
+.entry-meta > a {
+	font-size: .9em;
+}
+
+.entry-footer { /* section footers */
 	display: flex;
 	justify-content: center;
-	border-bottom: 1px dashed #ccc;
+	border-bottom: 2px dashed #bbb;
 	font-size: .9em;
+	padding-bottom: 20px;
 }
 
 .entry-footer span {
 	margin: 0 10px;
+}
+
+/* ============= PORTFOLIO PAGES ============= */
+
+article#post-281 .entry-content { /* Codify */
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+#portfolio-text {
+	margin-bottom: 150px;
+}
+
+#portfolio-text h2 {
+	margin: 0;
+	color: #006666;
+	font-size: 2em;
+}
+
+#portfolio-text p {
+	margin-top: 0;
+}
+
+span.project-tools {
+	text-transform: uppercase;
+	border-bottom: 2px dashed #ccc;
+	padding-bottom: 10px;
+}
+
+span.citation-source {
+	position: absolute;
+	bottom: -5%;
+	right: 5%;
+	background-color: #fff;
+	padding: 0 20px;
+}
+
+span.citation-source a {
+	font-size: .7em;
 }
 
 /*--------------------------------------------------------------
@@ -899,7 +1004,7 @@ article {
 }
 
 .hentry {
-	margin: 0 auto 1.5em;
+	margin: 0 auto 2.5em;
 }
 
 .updated:not(.published) {
@@ -917,6 +1022,18 @@ article {
 	margin: 0 0 1.5em;
 }
 
+h3#reply-title {
+	margin-bottom: 0;
+	font-size: 1.5em;
+}
+
+nav.post-navigation {
+	display: none;
+}
+
+.logged-in-as {
+	font-size: .9em;
+}
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -928,6 +1045,19 @@ article {
 	display: block;
 }
 
+#comments {
+	max-width: 940px;
+	margin: auto;
+}
+
+.comment-form-comment label {
+	display: block;
+}
+
+.form-submit #submit {
+	padding: 1em 2em;
+	font-size: .9em;
+}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -967,6 +1097,11 @@ object {
 	display: inline-block;
 }
 
+.msacwl-slider-wrap { /* Meta Slider */
+	max-width: 400px;
+	margin-right: 40px;
+	box-shadow: 1px 1px 10px #ccc;
+}
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
@@ -987,6 +1122,8 @@ object {
 
 .wp-caption-text {
 	text-align: center;
+	font-size: .7em;
+	font-weight: 700;
 }
 
 /*--------------------------------------------------------------
