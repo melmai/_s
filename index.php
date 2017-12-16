@@ -14,6 +14,7 @@
 
 get_header(); ?>
 
+	<h1 id="blog-title" class="entry-title">Work Blog</h1>
 	<div id="blog-container">
 
 		<div id="primary" class="content-area">

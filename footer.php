@@ -15,8 +15,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div id="contact-info" class="site-footer">
-			<a href="mailto:mel@mel.codes" class="button">mel@mel.codes</a>
-			<a href="tel:2066196344" class="button">206.619.6344</a>
+			<a href="mailto:mel@mel.codes" class="button"><span class="icon">&#9993;</span> mel@mel.codes</a>
 		</div><!-- #contact-info -->
 
 		<div class="site-info">

@@ -292,14 +292,14 @@ textarea {
 	font-size: 20px;
 }
 
-@media screen and (max-width: 37.5em) {
+@media screen and (max-width: 1000px) {
 	body,
 	button,
 	input,
 	select,
 	optgroup,
 	textarea {
-		font-size: 16px;
+		font-size: 18px;
 	}
 }
 
@@ -311,7 +311,7 @@ h2, h3, h4, h5, h6 {
 	margin: 1.5em 0 .75em;
 }
 h2, h4, h6 {
-	weight: 700;
+	font-weight: 700;
 }
 
 p {
@@ -457,10 +457,9 @@ input[type="submit"] {
 	border-color: #009999;
 	background: #009999;
 	color: #fff;
-	font-size: 12px;
-	font-size: 0.75rem;
+	font-size: 1.1rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: .4em 1em;
 	font-family: 'Inconsolata', Arial, sans-serif;
 	text-transform: uppercase;
 }
@@ -500,7 +499,8 @@ input[type="color"],
 textarea {
 	color: #ccc;
 	border: 1px solid #009999;
-	padding: 3px;
+	padding: .5em 1em;
+	font-size: 1.1rem;
 	font-family: 'Inconsolata', monospace;
 }
 
@@ -556,8 +556,16 @@ header img#logo {
 	height: 100px;
 }
 
-#site-navigation li a {
-	margin-left: 30%;
+@media screen and (max-width: 800px) {
+	header img#logo {
+		height: 90px;
+	}
+}
+
+@media screen and (min-width: 37.5em) {
+	#site-navigation li a {
+		margin-left: 30%;
+	}
 }
 
 footer.site-footer {
@@ -628,10 +636,18 @@ a.button:focus, a.more-link:focus {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+
 .main-navigation {
-	clear: both;
-	display: flex;
-	font-size: 1.3em;
+		clear: both;
+		display: flex;
+		font-size: 1.3em;
+}
+
+
+@media screen and (max-width: 37.5em) {
+	.main-navigation {
+		font-size: 1.2em;
+	}
 }
 
 .main-navigation ul {
@@ -672,6 +688,14 @@ a.button:focus, a.more-link:focus {
 .main-navigation li {
 	float: left;
 	position: relative;
+}
+
+@media screen and (max-width: 37.5em) {
+
+	.main-navigation li {
+		float: none;
+		margin: 10px 20px;
+	}
 }
 
 .main-navigation a {
@@ -837,6 +861,7 @@ a.button:focus, a.more-link:focus {
 
 .widget-title {
 	margin-bottom: 5px;
+	font-weight: 200;
 }
 
 .search-form {
@@ -853,9 +878,13 @@ aside#secondary > section > ul {
 	margin-bottom: 10px;
 }
 
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.margin-right {
+	margin-right: 20px;
+}
 
 blockquote > p {
 	font-size: 1.5em;
@@ -872,8 +901,32 @@ blockquote > p {
 	justify-content: space-around;
 }
 
-.content-area, .widget-area {
+.content-area, widget-area {
 	padding: 0 3%;
+}
+
+.widget-area {
+	width: 30%;
+}
+
+@media screen and (max-width: 800px) {
+
+	#blog-container {
+		flex-direction: column;
+	}
+
+	.widget-area {
+		width: 100%;
+		padding-left: 3%;
+	}
+
+	.widget-area ul {
+		font-size: .9em;
+	}
+}
+
+h1#blog-title {
+	margin-bottom: 30px;
 }
 
 #blog-header {
@@ -885,12 +938,16 @@ article {
 	max-width: 940px;
 }
 
-h1.entry-title {
+h1.entry-title { /* single.php */
 	font-size: 3em;
 	text-align: center;
 	margin: 0;
 	line-height: 1;
 	font-weight: 200;
+}
+
+h2.entry-title { /* index.php */
+	margin-top: 0;
 }
 
 .entry-title > a {
@@ -958,23 +1015,38 @@ h1.entry-title {
 
 /* ============= PORTFOLIO PAGES ============= */
 
-article#post-281 .entry-content { /* Codify */
+.portfolio-item { /* Codify */
 	display: flex;
 	justify-content: space-around;
 	align-items: flex-start;
 }
 
-#portfolio-text {
+.portfolio-images {
+	width: 50%;
+}
+
+.portfolio-images figure {
+	display: block;
+	margin-bottom: 30px;
+	margin-right: 30px;
+}
+
+.portfolio-images figure img {
+	box-shadow: 1px 1px 10px #ccc;
+	padding: 10px;
+}
+
+.portfolio-text {
 	margin-bottom: 150px;
 }
 
-#portfolio-text h2 {
+.portfolio-text h2 {
 	margin: 0;
 	color: #006666;
 	font-size: 2em;
 }
 
-#portfolio-text p {
+.portfolio-text p {
 	margin-top: 0;
 }
 
@@ -996,6 +1068,27 @@ span.citation-source a {
 	font-size: .7em;
 }
 
+#portfolio-items { /* contains all portfolio items in feed */
+	display: flex;
+	justify-content: center;
+	margin: 30px auto;
+}
+
+@media screen and (max-width: 665px) {
+	#portfolio-items {
+		flex-direction: column;
+	}
+}
+
+#portfolio-items .portfolio-item { /* portfolio item in feed */
+	flex-direction: column-reverse;
+	align-items: center;
+	margin: 20px;
+}
+
+#portfolio-items .portfolio-item h2 { /* portfolio title in feed */
+	margin: 20px auto 0;
+}
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -1123,7 +1216,7 @@ object {
 .wp-caption-text {
 	text-align: center;
 	font-size: .7em;
-	font-weight: 700;
+	color: #aaa;
 }
 
 /*--------------------------------------------------------------

@@ -29,7 +29,7 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<a href="<?php echo site_url(); ?>"><img id="logo" src="<?php bloginfo('template_directory'); ?>/assets/logo.svg"></a>
+			<a href="<?php echo site_url(); ?>"><img id="logo" src="<?php bloginfo('template_directory'); ?>/assets/logo-small.svg" alt="mel.codes logo"></a>
 			<?php
 			//the_custom_logo();
 			if ( is_front_page() && is_home() ) : ?>
@@ -47,7 +47,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'portfolio' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'portfolio' ); ?></button>
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
