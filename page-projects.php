@@ -34,7 +34,7 @@ get_header(); ?>
 						<div class="portfolio-item">
 							<p class="portfolio-skills"><?php echo get_post_meta( $page->ID, 'skills', true ); ?></p>
 							<h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
-							<?php echo get_the_post_thumbnail( $page->ID, 'medium' ); ?> 
+							<a href="<?php echo get_page_link ($page->ID); ?>"><?php echo get_the_post_thumbnail( $page->ID, 'medium' ); ?> </a>
 							<!-- <div class="entry"><?php //echo $content; ?></div> -->
 						</div><!-- .portfolio-item -->
 					<?php

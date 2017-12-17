@@ -556,6 +556,10 @@ header img#logo {
 	height: 100px;
 }
 
+.site-title, .site-description {
+	display: none;
+}
+
 @media screen and (max-width: 800px) {
 	header img#logo {
 		height: 90px;
@@ -970,12 +974,22 @@ h2.entry-title { /* index.php */
 	margin-top: 50px;
 }
 
-#resume-docs {
-}
-
 #resume-docs > a {
 	margin: 0 10px;
 }
+
+@media screen and (max-width: 600px) {
+	#resume-docs {
+		flex-direction: column;
+	}
+
+	#resume-docs > a {
+		margin-bottom: 20px;
+	}
+}
+
+
+
 
 #resume-section a img {
 	box-shadow: 1px 1px 10px #ccc;
@@ -1084,6 +1098,8 @@ span.citation-source a {
 	flex-direction: column-reverse;
 	align-items: center;
 	margin: 20px;
+	box-shadow: 1px 1px 10px #ccc;
+	padding: 10px;
 }
 
 #portfolio-items .portfolio-item h2 { /* portfolio title in feed */
